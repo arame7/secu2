@@ -88,8 +88,7 @@ def modifier_profil():
 @user_bp.route('/supprimer_compte', methods=['DELETE'])
 @jwt_required()
 def supprimer_compte():
-    utilisateur_id = get_jwt_identity()
-    utilisateur = Utilisateur.query.get(utilisateur_id)
+    utilisateur = Utilisateur.query.get(get_jwt_identity())
 
     # Supprimer les favoris de l'utilisateur
     favoris = Favori.query.filter_by(utilisateur_id=utilisateur.id).all()
