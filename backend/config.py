@@ -18,12 +18,12 @@ class Config:
     FLASK_ENV = os.getenv('FLASK_ENV', 'development')
 
     # Configuration de la base de données
-    DATABASE_TYPE = os.getenv('DATABASE_TYPE', 'postgresql')  # Par défaut : postgresql
-    DATABASE_USER = os.getenv('DATABASE_USER', 'postgres')
-    DATABASE_PASSWORD = os.getenv('DATABASE_PASSWORD', 'postgres')
+    DATABASE_TYPE = os.getenv('DATABASE_TYPE', 'type database') 
+    DATABASE_USER = os.getenv('DATABASE_USER', 'use database')
+    DATABASE_PASSWORD = os.getenv('DATABASE_PASSWORD', 'mot de passe ')
     DATABASE_HOST = os.getenv('DATABASE_HOST', 'localhost')
-    DATABASE_PORT = clean_int(os.getenv('DATABASE_PORT'), 5432)  # Par défaut : 5432 pour PostgreSQL
-    DATABASE_NAME = os.getenv('DATABASE_NAME', 'seculogi')
+    DATABASE_PORT = clean_int(os.getenv('DATABASE_PORT'), 5432)
+    DATABASE_NAME = os.getenv('DATABASE_NAME', 'nom de la base')
 
     # Construction de l'URI de la base de données
     SQLALCHEMY_DATABASE_URI = (
@@ -33,7 +33,7 @@ class Config:
 
     # Configuration du JWT
     JWT_SECRET_KEY = SECRET_KEY
-    JWT_ALGORITHM = os.getenv('ALGORITHM', 'HS256')  # Par défaut : HS256
+    JWT_ALGORITHM = os.getenv('ALGORITHM', 'algo')  
 
     # Configuration de Redis
     REDIS_HOST = os.getenv('REDIS_HOST', 'localhost')
